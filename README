@@ -1,0 +1,40 @@
+caer
+====
+
+AER event-based framework, written in C, targeting embedded systems.
+
+REQUIREMENTS:
+
+cmake >= 2.6
+gcc >= 4.9 or clang >= 3.6
+libcaer >= 1.0.2
+mini-xml (mxml) >= 2.7
+glfw >= 3.0.4 (optional, only if using visualizer module, Linux only!)
+
+INSTALLATION:
+
+1) configure: 
+
+$ cmake . 
+
+One of the following options is required:
+ -DDVS128=1             ... set dvs128 (for DVS128 model)
+ -DDAVISFX2=1           ... set davisfx2 (for DAVIS240A/B/C models)
+ -DDAVISFX3=1           ... set davisfx3 (for FX3 platform models)
+
+Optional options: 
+ -DENABLE_VISUALIZER=1  ... enable visualizer module (Linux only!)
+ -DENABLE_NET_STREAM=1  ... enable tcp server for sending data over network
+
+2) build:
+
+$ make
+
+3) install:
+
+$ make install
+
+USAGE:
+
+$ caer-bin (see docs/ for more info on how to use cAER)
+$ caer-ctl (run-time settings control program, optional)
